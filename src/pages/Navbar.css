@@ -1,0 +1,320 @@
+
+.navheader {
+  /* color: #e8f1f2; */
+  display: flex;
+  margin-top: -1.2rem;
+  position: fixed;
+  z-index: 10;
+  padding: 12px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: hsl(120, 4%, 5%);
+  width: 100%;
+  
+
+  /* border: 5px solid black; */
+}
+
+.highlighted-text {
+  background-image:  url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMjAwMTA5MDQvL0VOIgogICAgICAgICAgICAgICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+Cgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgICB3aWR0aD0iMWluIiBoZWlnaHQ9IjAuNWluIgogICAgIHZpZXdCb3g9IjAgMCAzMDAgMTUwIj4KICA8cGF0aAogICAgICAgIGZpbGw9IiNmZmUwMDAiIHN0cm9rZT0ibm9uZSIKICAgICAgICBkPSJNIDEyLjAwLDQ4LjAwCiAgICAgICAgICAgQyAxMi4wMCw1MC4wOSAxMS43OSw1NC45OSAxMi42MCw1Ni43MgogICAgICAgICAgICAgMTUuNTksNjMuMTggMjYuMDksNTYuNjQgMzMuMDAsNjMuMDAKICAgICAgICAgICAgIDMwLjg0LDYzLjE4IDIzLjA1LDYzLjg3IDIxLjgwLDY1LjAyCiAgICAgICAgICAgICAxOC4wMiw2Ny44OCAyMS4yOSw3Ni4zNSAyMS44MCw4MC4wMAogICAgICAgICAgICAgMjEuODAsODAuMDAgMjEuODAsODYuMDAgMjEuODAsODYuMDAKICAgICAgICAgICAgIDIxLjgwLDg2LjAwIDQwLjAwLDg3LjAwIDQwLjAwLDg3LjAwCiAgICAgICAgICAgICAzOS45Myw4OC44OCA0MC4wNiw5MS4wNCAzOC45OCw5Mi42OQogICAgICAgICAgICAgMzcuNTEsOTQuOTMgMzUuMTUsOTQuNzUgMzIuNTksOTYuMjAKICAgICAgICAgICAgIDI4LjMzLDk4LjYxIDI2Ljg3LDEwMi4yMiAyNy4zNCwxMDcuMDAKICAgICAgICAgICAgIDI3LjM0LDEwNy4wMCAzMC4wMiwxMjMuNDEgMzAuMDIsMTIzLjQxCiAgICAgICAgICAgICAzMS44MiwxMjUuNzUgNDAuMDEsMTI3Ljk1IDQzLjAwLDEyOC4wMAogICAgICAgICAgICAgNDMuMDAsMTI4LjAwIDg3LjAwLDEyOC4wMCA4Ny4wMCwxMjguMDAKICAgICAgICAgICAgIDg4LjA4LDEyMS41NiA5MS4xNiwxMjEuODAgOTcuMDAsMTIyLjA0CiAgICAgICAgICAgICA5Ny4wMCwxMjIuMDQgMTA5LjAwLDEyMy4wMCAxMDkuMDAsMTIzLjAwCiAgICAgICAgICAgICAxMDkuMDAsMTIzLjAwIDEyOC4wMCwxMjMuMDAgMTI4LjAwLDEyMy4wMAogICAgICAgICAgICAgMTI4LjAwLDEyMy4wMCAxODIuMDAsMTIyLjAwIDE4Mi4wMCwxMjIuMDAKICAgICAgICAgICAgIDE5NC41OCwxMjEuOTcgMTg4LjQyLDExOS4wMyAyMDEuMDAsMTE5LjAwCiAgICAgICAgICAgICAyMDEuMDAsMTE5LjAwIDI0My4wMCwxMTkuMDAgMjQzLjAwLDExOS4wMAogICAgICAgICAgICAgMjQzLjAwLDExOS4wMCAyNTguMDAsMTE4LjAwIDI1OC4wMCwxMTguMDAKICAgICAgICAgICAgIDI1OS41MywxMDkuMTAgMjY2LjAxLDExMy4zNyAyNzAuNDAsMTA5LjE1CiAgICAgICAgICAgICAyNzIuNjEsMTA3LjAzIDI3Mi4zMCwxMDAuODUgMjcyLjAwLDk4LjAwCiAgICAgICAgICAgICAyNzIuMDAsOTguMDAgMjgwLjAwLDk3LjAwIDI4MC4wMCw5Ny4wMAogICAgICAgICAgICAgMjgwLjAwLDk0LjEwIDI4MC4yNiw4OC41NSAyNzkuMjYsODYuMDIKICAgICAgICAgICAgIDI3Ni40OSw3OC45OCAyNjQuNjMsNzYuODggMjU4LjAwLDc2LjAwCiAgICAgICAgICAgICAyNjUuMTUsNjkuMTkgMjc2LjQwLDczLjAzIDI3NC44NSw2Mi4wNAogICAgICAgICAgICAgMjc0LjQ3LDU5LjM1IDI3My43Myw1OC44NSAyNzIuMDAsNTcuMDAKICAgICAgICAgICAgIDI4MS42OCw1My43NyAyODEuMDAsNTQuMjggMjgxLjAwLDQ0LjAwCiAgICAgICAgICAgICAyODEuMDAsNDQuMDAgMjU4LjAwLDQyLjM4IDI1OC4wMCw0Mi4zOAogICAgICAgICAgICAgMjUwLjAwLDQwLjg0IDI1MS40OCwzOC4wMyAyMzUuMDAsMzguMDAKICAgICAgICAgICAgIDIzNS4wMCwzOC4wMCAxODkuMDAsMzkuMDAgMTg5LjAwLDM5LjAwCiAgICAgICAgICAgICAxODkuMDAsMzkuMDAgMTc3LjAwLDM5LjgyIDE3Ny4wMCwzOS44MgogICAgICAgICAgICAgMTc3LjAwLDM5LjgyIDE1OS4wMCwzOC4wMCAxNTkuMDAsMzguMDAKICAgICAgICAgICAgIDE1OS4wMCwzOC4wMCAxMjguMDAsMzguMDAgMTI4LjAwLDM4LjAwCiAgICAgICAgICAgICAxMTYuOTAsMzguMDIgMTIwLjE2LDM5LjQwIDExMy4wMCw0MC42NwogICAgICAgICAgICAgMTEzLjAwLDQwLjY3IDk3LjAwLDQyLjE3IDk3LjAwLDQyLjE3CiAgICAgICAgICAgICA5Ny4wMCw0Mi4xNyA4Ny4wMCw0My44MyA4Ny4wMCw0My44MwogICAgICAgICAgICAgODcuMDAsNDMuODMgNTcuMDAsNDUuMDAgNTcuMDAsNDUuMDAKICAgICAgICAgICAgIDU3LjAwLDQ1LjAwIDMyLjAwLDQ4LjAwIDMyLjAwLDQ4LjAwCiAgICAgICAgICAgICAzMi4wMCw0OC4wMCAxMi4wMCw0OC4wMCAxMi4wMCw0OC4wMCBaIiAvPgo8L3N2Zz4K');
+  background-position: 50% 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.navicon-div-span {
+  display: none;
+  flex-direction: column;
+}
+
+.navicon-div-span span {
+  width: 60px;
+  height: 2px;
+  background-color: orangered;
+  margin-bottom: 1rem;
+}
+
+.navheader::-webkit-scrollbar {
+  display: none;
+}
+
+.navheader {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.navheader__icons {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.navheader__icon {
+  display: flex;
+  flex-direction: column;
+  width: 195px;
+  cursor: pointer;
+  color: #f0f3f5;
+  text-decoration: none;
+}
+
+.img-navheader {
+  width: 300px;
+  height: 60px;
+}
+
+.img-navheader a {
+  text-decoration: none;
+  color:white;
+}
+
+.navheader__icon > .MuiSvgIcon-root {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+}
+
+.navheader__icon:hover > p {
+  display: inline-flex;
+}
+
+.navheader__icon > p {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: small;
+  font-weight: 730;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-flex;
+  margin-bottom: 0px;
+}
+
+.navheader__icon > button {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+  color: white;
+  background: linear-gradient(
+    to right,
+    red,
+    rgba(247, 90, 17, 0.904),
+    rgb(238, 130, 8)
+  );
+  border-color: transparent;
+  border-radius: 5px;
+  font-size: small;
+  font-weight: 630;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-flex;
+  margin-bottom: 0px;
+}
+
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 500px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content span {
+  font-size: 16px;
+  color: #143049;
+  font-weight: normal;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: orangered;
+  font-size: 19px;
+  font-weight: 540;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  text-align: left;
+  padding: 16px 16px 16px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.navheader__icon:hover > .MuiSvgIcon-root {
+  font-size: 28px;
+}
+
+.navheader__icon:hover > p {
+  font-size: smaller;
+}
+
+@media (max-width: 450px) {
+  
+  .navheader {
+    /* color: #e8f1f2; */
+    
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    
+  }
+
+  .navheader__icon {
+    display: none;
+    flex-direction: column;
+    width: 80px;
+    cursor: pointer;
+    color: #233f58;
+    text-decoration: none;
+  }
+
+  .navicon-div-span {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12rem;
+    margin-top: 0rem;
+    padding-top: 1%;
+  }
+
+  .navicon-div-span span {
+    width: 30px;
+    height: 4px;
+    background-color: orangered;
+    margin-bottom: 0.4rem;
+  }
+
+  .sidedrawer-nav {
+    align-items: center;
+    margin-top: -1rem;
+    padding-top: 2rem;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      red,
+      rgba(247, 90, 17, 0.904),
+      rgb(238, 130, 8)
+    );
+    text-align: center;
+  }
+
+  .side-drawer-div {
+    margin-bottom: 3rem;
+  }
+
+  .side-drawer-p {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+
+  .side-drawer-p button {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.1rem;
+    color: orangered;
+    background: white;
+    border-color: transparent;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: 630;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    margin-bottom: 0px;
+  }
+
+  .img-navheader {
+    width: 30px;
+    height: 60px;
+  }
+
+  .img-navheader a {
+   margin-left: 0rem;
+   font-size: 15px;
+  }
+
+  .navheader__icon > .MuiSvgIcon-root {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+
+  .navheader__icon:hover > p {
+    display: inline-flex;
+  }
+
+  .navheader__icon > p {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: small;
+    font-weight: 830;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    margin-bottom: 0px;
+  }
+
+  .navheader__icon > button {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    color: white;
+    background: linear-gradient(
+      to right,
+      red,
+      rgba(247, 90, 17, 0.904),
+      rgb(238, 130, 8)
+    );
+    border-color: transparent;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: 630;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    margin-bottom: 0px;
+  }
+}
